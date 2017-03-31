@@ -1,0 +1,18 @@
+#!/bin/sh
+# Checks DNS via DIG at the same time for easy email DNS troubleshooting.
+#
+# Prints neat and simple for delivery to customers.
+#
+#
+echo -e "\n\e[1;25;32m###### START REPORT ######\e[0m\n"
+echo -e "\n\e[1;25;32m----- NAME SERVERS ----\e[0m\n"
+dig NS +short $1
+echo -e "\n\e[1;25;32m------ MX RECORD ------\e[0m\n"
+dig MX +short $1
+echo -e "\n\e[1;25;32m----- MAIL RECORD -----\e[0m\n"
+dig mail. +short $1
+echo -e "\n\e[1;25;32m----- SMTP RECORD -----\e[0m\n"
+dig smtp. +short $1
+echo -e "\n\e[1;25;32m------ TXT RECORD ------\e[0m\n"
+dig TXT +short $1'
+echo -e "\n\e[1;25;32m####### END REPORT ######\e[0m\n"
