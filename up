@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # A simple ping script to check if a server connection is up.
-# No icmp info is displayed, just if its up or down.
+# No icmp info is displayed, just if the domain/IP is resolving.
 # Color options in echo may be buggy in macOS.
 #
 target=$1
@@ -10,7 +10,7 @@ if [ $count -eq 0 ]
 # echo is spaced to print just off the edge of terminal window for easy reading.
 # Change echo to whatever you like :)
 then
-        echo -e "\n\e[1;5;91m                Link DOWN\e[0m\n"
+        echo -e "\n\e[1;5;91m           Link DOWN\e[0m\n"
 else
-        echo -e "\n\e[1;5;32m                Link ACTIVE\e[0m\n"
+        echo -e "\n\e[1;5;32m           Link ACTIVE\e[0m\n"
 fi
