@@ -1,6 +1,6 @@
-#!/bin/sh
-# Checks DNS via DIG at the same time for easy email DNS troubleshooting.
+#!/bin/bash
 #
+# Checks DNS via DIG at the same time for easy email DNS troubleshooting.
 # Prints neat and simple for delivery to customers.
 #
 #
@@ -14,5 +14,5 @@ dig mail. +short $1
 echo -e "\n\e[1;25;32m----- SMTP RECORD -----\e[0m\n"
 dig smtp. +short $1
 echo -e "\n\e[1;25;32m------ TXT RECORD ------\e[0m\n"
-dig TXT +short $1'
+dig TXT +short $1
 echo -e "\n\e[1;25;32m####### END REPORT ######\e[0m\n"
