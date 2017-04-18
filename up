@@ -4,16 +4,11 @@
 # No icmp info is displayed, just if its up or down.
 # Color options in echo may be buggy in macOS.
 #
-
 target=$1
-
 count=$( ping -c 1 $target | grep icmp* | wc -l )
-
 if [ $count -eq 0 ]
-
 # echo is spaced to print just off the edge of terminal window for easy reading.
 # Change echo to whatever you like :)
-
 then
         echo -e "\n\e[1;5;91m                Link DOWN\e[0m\n"
 else
