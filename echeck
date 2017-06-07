@@ -9,8 +9,6 @@ echo -e "\n\e[1;25;32m----- NAME SERVERS ----\e[0m\n"
 dig NS +short $1
 echo -e "\n\e[1;25;32m------ MX RECORD ------\e[0m\n"
 dig MX +short $1
-echo -e "\n\e[1;25;32m----- MAIL RECORD -----\e[0m\n"
-dig mail. +short $1
 echo -e "\n\e[1;25;32m----- SMTP RECORD -----\e[0m\n"
 dig smtp. +short $1
 echo -e "\n\e[1;25;32m------ TXT RECORD ------\e[0m\n"
