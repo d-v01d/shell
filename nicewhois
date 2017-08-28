@@ -6,7 +6,7 @@
 #
 #
 echo -e '\n\e[1;25;32m############# [WHOIS QUERY] #############\e[0m\n'
-whois $1 | egrep 'Domain Name:|Registrar:|Registrant Name:|Reseller:|Admin Email|Name Server:|Abuse|Date'
+whois $1 | egrep 'Domain Name:|Registrar:|Registrant Name:|Reseller:|Admin Email|Domain Status|Name Server:|Abuse|Date'
 whois $1 | grep 'abuse|date:'
 whois $1 | grep -A 4 "Name server:"
 echo -e '\n\e[1;25;32m#########################################\e[0m\n'
