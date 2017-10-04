@@ -1,10 +1,11 @@
 #!/bin/bash
-
-# WATCHTOWER cron script for checking lan connectivity
-# Checks ping and performs "service network restart" if ping fails.
-# Ping count is set aggressively to 2, Having ping set at anything less can cause false positives and send you into a network restart loop
-
-
+#
+#                   [WATCHTOWER] 
+# Meant to be used as a cron job for checking lan connectivity.
+# Checks ping and restarts networking if ping fails.
+# Ping count is set aggressively to 2, Having ping set at anything less can cause false positives and send you into a network restart loop.
+#
+#
 PING_COUNT=2
 
 PING="/bin/ping"
@@ -13,13 +14,14 @@ PING="/bin/ping"
 GATEWAY_IP='ip route | grep default | cut -d " " -f 3'
 
 # ping test
-$PING -n -c "$PING_COUNT" "$GATEWAY_IP" &>/dev/null
+$PING -n -c "$PING_COUNT" "$GATEWAY_IP" &> /dev/null
 
 if [ "$?" -ge 1 ]
 then
     # This will log a message in system log.
     logger "Network access DOWN"
-    service network restart
+    service networking restart
 else
+	# Comment this if it's just noise to you.
     logger "Network access OK"
 fi

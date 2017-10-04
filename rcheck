@@ -1,15 +1,14 @@
 #!/bin/bash
 #
-# RCheck (Reboot Check)
+#      [rCheck (Reboot Check)]
 # Checks Ping and Nmap at the same time.
 # Prints neat and simple for delivery to customers.
 #
-echo -e "\n\e[1;25;32m##### [PING RESPONSE] #####\e[0m\n"
-echo 'ping -c 6' $1
-ping -c 6 $1
-echo -e "\n\e[1;25;32m###########################\e[0m\n"
-echo ''
-echo -e "\n\e[1;25;32m####### [NMAP SCAN] #######\e[0m\n"
+echo -e "\n\e[1;25;32m############# [PING RESPONSE] #############\\e[0m\n"
+echo 'ping -c4' $1
+ping -c4 $1
+echo -e "\n\e[1;25;32m###########################################\e[0m\n"
+echo -e "\n\e[1;25;32m############### [NMAP SCAN] ###############\\e[0m\n"
 echo 'nmap' $1
-nmap $1
-echo -e "\n\e[1;25;32m###########################\e[0m\n"
+nmap -F -O $1
+echo -e "\n\e[1;25;32m###########################################\e[0m\n"

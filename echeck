@@ -1,16 +1,19 @@
 #!/bin/bash
 #
-# Checks DNS via DIG at the same time for easy email DNS troubleshooting.
+#                [eCheck (email check)]
+# Checks multiple DNS records at the same time via DIG for easy email DNS troubleshooting.
 # Prints neat and simple for delivery to customers.
 #
 #
-echo -e "\n\e[1;25;32m###### START REPORT ######\e[0m\n"
-echo -e "\n\e[1;25;32m----- NAME SERVERS ----\e[0m\n"
-dig NS +short $1
-echo -e "\n\e[1;25;32m------ MX RECORD ------\e[0m\n"
-dig MX +short $1
-echo -e "\n\e[1;25;32m----- SMTP RECORD -----\e[0m\n"
-dig smtp. +short $1
-echo -e "\n\e[1;25;32m------ TXT RECORD ------\e[0m\n"
-dig TXT +short $1
-echo -e "\n\e[1;25;32m####### END REPORT ######\e[0m\n"
+echo -e "\e[1;25;32m###### START REPORT ######\e[0m"
+echo -e "\n\e[1;25;32m----  A RECORD(S)   ----\e[0m\n"
+dig A +short $1 @8.8.4.4
+echo -e "\n\e[1;25;32m----  MX RECORD(S)  ----\e[0m\n"
+dig MX +short $1 @8.8.4.4
+echo -e "\n\e[1;25;32m----- NS RECORD(S) -----\e[0m\n"
+dig NS +short $1 @8.8.4.4
+echo -e "\n\e[1;25;32m----  TXT RECORD(S) ----\e[0m\n"
+dig TXT +short $1 @8.8.4.4
+echo -e "\n\e[1;25;32m---  CNAME RECORD(S) ---\e[0m\n"
+dig CNAME +short $1 @8.8.4.4
+echo -e "\e[1;25;32m####### END REPORT #######\e[0m"
