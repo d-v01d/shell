@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 #
 #                [Nice Whois (nw)]
 # A bash whois query shortcut with a nicer output.

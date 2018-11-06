@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 #                [eCheck (email check)]
 # Checks multiple DNS records at the same time via DIG for easy email DNS troubleshooting.

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 #      [rCheck (Reboot Check)]
 # Checks Ping and Nmap at the same time.
