@@ -1,7 +1,7 @@
 
 ##                            Shell tools
 
-#### This is a collection of custom binaries/shell scripts that I use to make NOC/SysAdmin work a little faster.
+#### This is a collection of shell scripts that I use to make NOC/SysAdmin work a little faster.
 
 Enjoy! :)
 
